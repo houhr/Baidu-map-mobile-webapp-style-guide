@@ -1,0 +1,89 @@
+@import 'variables',
+        'mixin';
+/*
+Tab
+
+类名：`tab`
+
+只支持 `<ul>/<li>/<a>` 的结构
+
+Styleguide 6
+*/
+
+/*
+
+Tab样式
+
+`默认`  Tab用于切换整个页面的样式
+
+`-secondary`  Tab用于切换局部元素的样式
+
+Markup:
+<div class="container -no-padding -normal -spacing-large">
+    <ul class="tab -spacing-base">
+        <li><a href="#"><i class="icon -marker"></i> 地图</a></li>
+        <li class="active"><a href="#"><i class="icon -place"></i> 周边</a></li>
+        <li><a href="#"><i class="icon -route"></i> 路线</a></li>
+    </ul>
+</div>
+<div class="container -normal">
+    <ul class="tab -secondary -spacing-base">
+        <li class="active"><a href="#">较快捷</a></li>
+        <li><a href="#">少步行</a></li>
+        <li><a href="#">少换乘</a></li>
+        <li><a href="#">不坐地铁</a></li>
+    </ul>
+    <ul class="tab -secondary -spacing-base">
+        <li><a href="#">较快捷</a></li>
+        <li class="active"><a href="#">少步行</a></li>
+        <li><a href="#">少换乘</a></li>
+        <li><a href="#">不坐地铁</a></li>
+    </ul>
+    <ul class="tab -secondary">
+        <li><a href="#">较快捷</a></li>
+        <li><a href="#">少步行</a></li>
+        <li><a href="#">少换乘</a></li>
+        <li class="active"><a href="#">不坐地铁</a></li>
+    </ul>
+</div>
+
+Styleguide 6.1
+*/
+
+ul.tab {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: table;
+    &>li {
+        display: table-cell;
+        border-bottom: $border-default solid 1px;
+        border-right: $border-default solid 1px;
+        font-size: $-ft-middle;
+        height: 50px;
+        text-align: center;
+        line-height: 1;
+        &.active {
+            border-bottom: none;
+            background-color: $-bg-lighter;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+
+
+        & > a {
+            display: block;
+            height: 100%;
+            &:active {
+                background-color: darken($-bg-normal, 5%);
+            }
+            @include vertical-center;
+            &:before {
+                margin-top: 0.3em;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,43 @@
+@import 'variables';
+ul.tab.-secondary {
+        border-bottom: $border-default solid 1px;
+        padding: 8px 8px 0 8px;
+        & > li {
+            border-bottom: none; 
+            border-right: none;
+            position: relative;
+            font-size: $-ft-base;
+            height: auto;
+            &:before {
+                content: "|";   
+                position: absolute;
+                left: 0;
+                color: $border-default;
+                top: 50%;
+                margin-top: -7px;
+            }
+            &:first-child:before {
+                content: "";   
+            }
+            &.active {
+                background-color: inherit;
+                color: $-ft-brand;
+                border-left: $border-default solid 1px;
+                border-top: $border-default solid 1px;
+                border-right: $border-default solid 1px;
+                &:before {
+                    content: "";
+                }
+                &+li:before {
+                    content: "";
+                }
+                & > a {
+                    background-color: $-bg-light;
+                }
+            }
+            & > a {
+                padding: $space-base-vertical 0;
+                margin-bottom: -1px;
+            }
+        }
+    }

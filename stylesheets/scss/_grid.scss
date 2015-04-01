@@ -1,0 +1,234 @@
+/*
+ * author: houhongru@baidu.com
+ */
+
+@import '_variables',
+        'mixin';
+
+/*
+栅格系统
+
+Styleguide 2
+*/
+
+/*
+行
+
+如果某些内容会呈现在同一行上（并垂直居中），需要将其置于带有 row 类的 div 元素中。
+
+类名：`row`<br>
+
+
+Markup:
+<div id="example-2-1">
+    <div class="row"></div>
+</div>
+
+Styleguide 2.1
+*/
+
+.row {
+    width: 100%;
+    display:table;
+    font-size:0.01rem;
+    word-spacing: -1em;
+    &:before {
+        content: "";
+        display: inline-block;
+        height: 100%; 
+        vertical-align: middle;
+    }
+
+    & > * {
+        display: inline-block !important;
+        font-size: $-ft-base;
+        word-spacing: normal;
+        float: none;
+        vertical-align: middle;
+    }
+}
+
+// styles for -col*
+@for $i from 1 through $col-num {
+    .-col#{$i} {
+        width: 100% / $col-num * $i !important;
+    }
+}
+
+/*
+列
+
+采用#{$col-num}列栅格，将整个宽度按#{$col-num}列划分，通过定义每个元素所占col数表示其所占的宽度。 例如宽度占4列表示占总宽度的1/3 (4/12)。 
+
+全局参数：<br>
+    `-col1` <br>
+    `-col2` (1/6)<br>
+    `-col3` (1/4)<br>
+    `-col4` (1/3)<br>
+    `-col5` <br>
+    `-col6` (1/2)<br>
+    `-col7` <br>
+    `-col8` (2/3)<br>
+    `-col9` (3/4)<br>
+    `-col10` (5/6)<br>
+    `-col11` <br>
+    `-col12` (100%)
+
+
+Markup:
+<div id="example-2-2">
+    <div class="row">
+        <div class="-col1"><p>-col1</p></div>
+        <div class="-col11"><p>-col11</p></div>
+    </div>
+    <div class="row">
+        <div class="-col2"><p>-col2 (1/6)</p></div>
+        <div class="-col10"><p>-col10 (5/6)</p></div>
+    </div>
+    <div class="row">
+        <div class="-col3"><p>-col3 (1/4)</p></div>
+        <div class="-col9"><p>-col9 (3/4)</p></div>
+    </div>
+    <div class="row">
+        <div class="-col4"><p>-col4 (1/3)</p></div>
+        <div class="-col8"><p>-col8 (2/3)</p></div>
+    </div>
+    <div class="row">
+        <div class="-col5"><p>-col5</p></div>
+        <div class="-col7"><p>-col7</p></div>
+    </div>
+    <div class="row">
+        <div class="-col6"><p>-col6 (1/2)</p></div>
+        <div class="-col6"><p>-col6 (1/2)</p></div>
+    </div>
+    <div class="row">
+        <div class="-col7"><p>-col7</p></div>
+        <div class="-col5"><p>-col5</p></div>
+    </div>
+    <div class="row">
+        <div class="-col8"><p>-col8 (2/3)</p></div>
+        <div class="-col4"><p>-col4 (1/3)</p></div>
+    </div>
+    <div class="row">
+        <div class="-col9"><p>-col9 (3/4)</p></div>
+        <div class="-col3"><p>-col3 (1/4)</p></div>
+    </div>
+    <div class="row">
+        <div class="-col10"><p>-col10 (5/6)</p></div>
+        <div class="-col2"><p>-col2 (1/6)</p></div>
+    </div>
+    <div class="row">
+        <div class="-col11"><p>-col11 (11/12)</p></div>
+        <div class="-col1"><p>-col1 (1/12)</p></div>
+    </div>
+    <div class="row">
+        <div class="-col12"><p>-col12 (100%)</p></div>
+    </div>
+</div>
+
+Styleguide 2.2
+*/
+
+
+/*
+等宽浮动行
+
+类名 `flex-row`
+
+用`flexbox`实现行内元素自动等宽
+
+子元素参数：
+
+`-col-auto` 使用默认宽，不自动等宽
+
+Markup:
+<div id="example-2-3">
+    <div class="container">
+    <div class="flex-row">
+        <div class="-bg-light">
+            Flex Column 1 
+        </div>
+        <div class="-bg-brand">
+            Flex Column 2
+        </div>
+        <div class="-bg-darker -ft-fifth">
+            Flex Column 3 
+        </div>
+    </div>
+    </div>
+    <div class="container">
+    <div class="flex-row">
+        <div class="-bg-light">
+            Flex Column 1 
+        </div>
+        <div class="-bg-brand">
+            Flex Column 2
+        </div>
+        <div class="-bg-darker -col-auto -ft-fifth">
+            Auto-width Column 3 
+        </div>
+    </div>
+    </div>
+</div>
+
+Styleguide 2.3
+*/
+
+.flex-row {
+    display: -webkit-box !important;    // iOS/Android
+    display: -webkit-flex !important;   // Chrome
+
+    & > * {
+        display: block !important;
+        -webkit-box-flex: 1;            // iOS/Android
+        -webkit-flex: 1;                // Chrome
+    }
+
+    & > .-col-auto {
+        display: block !important;
+        -webkit-box-flex: 0;            // iOS/Android
+        -webkit-flex: 0 0 auto;         // Chrome
+    }
+}
+
+
+
+/*
+ * Flex Grid not work well on Android, because 'flex-basis' is NOT supported
+.row {
+    display: -webkit-box !important;    // iOS/Andriod
+    display: -webkit-flex !important;   // Chrome
+    display: box;
+    display: flex;
+    -webkit-box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: center;
+    align-items: center;
+    & > * {
+        display: block !important;
+        -webkit-box-flex: 1;            // iOS/Android
+        -webkit-flex: 1;                // Chrome
+        box-flex: 1;
+        flex: 1;
+    }
+
+}
+
+.-no-flex {
+    -webkit-box-flex: 0 0 auto;            // iOS/Android
+    -webkit-flex: 0 0 auto;                // Chrome
+    box-flex: 0 0 auto;            
+    flex: 0 0 auto;                
+}
+
+//@for $i from 1 through $col-num {
+    .-col#{$i} {
+        -webkit-box-flex: 0 0 100%/$col-num*$i !important; // Android
+        -webkit-flex: 0  0 100%/$col-num*$i !important;    // iOS
+        box-flex: 0 0 100%/$col-num*$i !important; // Android
+        flex: 0  0 100%/$col-num*$i !important;    // iOS
+    }
+}
+*/
+

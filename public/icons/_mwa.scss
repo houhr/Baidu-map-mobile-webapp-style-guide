@@ -1,0 +1,99 @@
+//
+// Icon Font: mwa
+//
+
+@font-face {
+  font-family: "mwa";
+  src: font-url("./mwa.eot");
+  src: font-url("./mwa.eot?#iefix") format("embedded-opentype"),
+       font-url("./mwa.woff") format("woff"),
+       font-url("./mwa.ttf") format("truetype"),
+       font-url("./mwa.svg#mwa") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "mwa";
+    src: font-url("./mwa.svg#mwa") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.-apps:before,
+.-back-arrow:before,
+.-bus:before,
+.-clock:before,
+.-close:before,
+.-down-angle:before,
+.-drive:before,
+.-end:before,
+.-flight:before,
+.-gotop:before,
+.-label:before,
+.-list-arrow:before,
+.-location:before,
+.-marker:before,
+.-menu:before,
+.-message:before,
+.-metro:before,
+.-minus:before,
+.-place:before,
+.-plus:before,
+.-profile:before,
+.-recommend:before,
+.-reverse:before,
+.-route:before,
+.-search:before,
+.-solid-marker:before,
+.-start:before,
+.-telephone:before,
+.-traffic:before,
+.-walk:before {
+  display: inline-block;
+  font-family: "mwa";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.-apps:before { content: "\f11e"; }
+.-back-arrow:before { content: "\f11a"; }
+.-bus:before { content: "\f101"; }
+.-clock:before { content: "\f103"; }
+.-close:before { content: "\f11f"; }
+.-down-angle:before { content: "\f11b"; }
+.-drive:before { content: "\f119"; }
+.-end:before { content: "\f105"; }
+.-flight:before { content: "\f120"; }
+.-gotop:before { content: "\f121"; }
+.-label:before { content: "\f122"; }
+.-list-arrow:before { content: "\f11c"; }
+.-location:before { content: "\f107"; }
+.-marker:before { content: "\f109"; }
+.-menu:before { content: "\f123"; }
+.-message:before { content: "\f10a"; }
+.-metro:before { content: "\f115"; }
+.-minus:before { content: "\f10b"; }
+.-place:before { content: "\f10c"; }
+.-plus:before { content: "\f10d"; }
+.-profile:before { content: "\f10e"; }
+.-recommend:before { content: "\f10f"; }
+.-reverse:before { content: "\f124"; }
+.-route:before { content: "\f110"; }
+.-search:before { content: "\f11d"; }
+.-solid-marker:before { content: "\f117"; }
+.-start:before { content: "\f111"; }
+.-telephone:before { content: "\f118"; }
+.-traffic:before { content: "\f125"; }
+.-walk:before { content: "\f114"; }

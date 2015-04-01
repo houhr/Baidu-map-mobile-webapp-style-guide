@@ -1,0 +1,38 @@
+{
+  "name": "baidu-map-web-app-style-guide",
+  "version": "0.1.0",
+  "author": "Hongru Hou <houhongru@baidu.com>",
+  "description": "The front-end style guide for Baidu map Web app.",
+  "contributors": [
+    {
+      "name": "Lin Li",
+      "email": "lilin09@baidu.com"
+    }
+  ],
+  "scripts": {
+    "regenerate": "gulp"
+  },
+  "repository": {
+    "type": "svn",
+    "url": "https://svn.bce.bae.baidu.com/appid89ac2cam6b/0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "~3.3.4",
+    "gulp-ruby-sass": "~0.2.0",
+    "gulp-notify": "~0.2.0",
+    "gulp-autoprefixer": "~0.0.4",
+    "tiny-lr": "~0.0.5",
+    "gulp-livereload": "~0.2.0",
+    "gulp-minify-css": "~0.3.0",
+    "gulp-util": "~2.2.14",
+    "gulp-rename": "~1.2.0"
+  },
+  "keywords": [
+    "gulp",
+    "sass",
+    "kss",
+    "style guide"
+  ],
+  "license": "MIT"
+}

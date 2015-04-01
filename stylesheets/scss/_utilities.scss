@@ -1,0 +1,14 @@
+@import 'variables',
+        'mixin';
+.clearfix {
+    @include clearfix;
+}
+.-vcenter {
+    @include vertical-center;
+}
+
+.-hcenter {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

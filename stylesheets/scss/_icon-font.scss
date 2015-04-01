@@ -1,0 +1,60 @@
+
+@font-face {
+  font-family: "mwa";
+  src: url("../icons/mwa.eot");
+  src: url("../icons/mwa.woff") format("woff"),
+       url("../icons/mwa.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.icon {
+    font-style:normal;
+    display: inline-block;
+    line-height: 1;
+    &:before {
+        font-size: 16px;
+        font-family: "mwa";
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    &.-large {
+        &:before {
+            font-size: 20px;
+        }
+    }
+
+    &.-apps:before { content: "\f11e"; }
+    &.-back-arrow:before { content: "\f11a"; }
+    &.-bus:before { content: "\f101"; }
+    &.-clock:before { content: "\f103"; }
+    &.-close:before { content: "\f11f"; }
+    &.-down-angle:before { content: "\f11b"; }
+    &.-drive:before { content: "\f119"; }
+    &.-end:before { content: "\f105"; }
+    &.-flight:before { content: "\f120"; }
+    &.-gotop:before { content: "\f121"; }
+    &.-label:before { content: "\f122"; }
+    &.-list-arrow:before { content: "\f11c"; }
+    &.-location:before { content: "\f107"; }
+    &.-marker:before { content: "\f109"; }
+    &.-menu:before { content: "\f123"; }
+    &.-message:before { content: "\f10a"; }
+    &.-metro:before { content: "\f115"; }
+    &.-minus:before { content: "\f10b"; }
+    &.-place:before { content: "\f10c"; }
+    &.-plus:before { content: "\f10d"; }
+    &.-profile:before { content: "\f10e"; }
+    &.-recommend:before { content: "\f10f"; }
+    &.-reverse:before { content: "\f124"; }
+    &.-route:before { content: "\f110"; }
+    &.-search:before { content: "\f11d"; }
+    &.-solid-marker:before { content: "\f117"; }
+    &.-start:before { content: "\f111"; }
+    &.-telephone:before { content: "\f118"; }
+    &.-traffic:before { content: "\f125"; }
+    &.-walk:before { content: "\f114"; }
+}
+

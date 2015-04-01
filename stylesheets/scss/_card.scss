@@ -1,0 +1,135 @@
+@import 'variables',
+        'mixin';
+
+/*
+卡片
+
+组成页面布局的基本结构
+
+包括`card`和`container`两种基本容器
+
+`card` 和 `container` 的区别在于`card`四周都有border,`container`默认没有border
+
+Styleguide 7
+*/
+
+.card,.container {
+    display: block;
+    width: 100%;
+    padding: $space-base-vertical $space-base-horizontal;
+    overflow: hidden;
+
+    &.-no-padding {
+        padding: 0;
+    }
+
+    @include color(-lighter, $-bg-lighter);
+    @include color(-light, $-bg-light);
+    @include color(-normal, $-bg-normal);
+    @include color(-dark, $-bg-dark);
+}
+/*
+卡片样式
+
+类名: `card`
+
+可选参数：
+
+`-no-padding` 去掉padding
+
+Markup:
+<div id="example-7-1">
+    <div class="card">
+        <div class="card -light">normal card</div>
+        <div class="card -light -no-padding"> no-padding card</div>
+    </div>
+</div>
+
+Styleguide 7.1
+*/
+
+/*
+卡片颜色
+
+`默认` 继承父级元素
+
+可选参数：
+
+`-lighter` <br>
+`-light` <br>
+`-normal` <br>
+`-dark` <br>
+
+Markup:
+<div id="example-7-2">
+    <div class="card -lighter">lighter card</div>
+    <div class="card -light">light card</div>
+    <div class="card -normal">normal card</div>
+    <div class="card -dark">dark card</div>
+</div>
+
+Styleguide 7.2
+*/
+
+.card {
+    margin-bottom: $space-base-vertical;
+    border: $line-default;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &.-no-border {
+        border: none;
+    }
+}
+
+
+/*
+容器样式
+
+类名：`container`
+
+`默认`
+
+可选参数：
+
+`-no-padding` 去掉padding
+
+`-border` 添加border-bottom
+
+Markup:
+<div id="example-7-1">
+    <div class="container -light">
+        <div class="container -lighter ">normal container</div>
+        <div class="container -normal -no-padding"> no-padding container</div>
+        <div class="container -dark -border"> border container</div>
+    </div>
+</div>
+
+Styleguide 7.3
+*/
+
+/*
+容器颜色
+
+颜色定义和卡片相同
+
+Markup:
+<div id="example-7-4">
+    <div class="container -lighter">lighter container</div>
+    <div class="container -light">light container</div>
+    <div class="container -normal">normal container</div>
+    <div class="container -dark">dark container</div>
+</div>
+
+Styleguide 7.4
+*/
+
+.container {
+
+    &.-border {
+        border-bottom: $line-default;
+    }
+}
+

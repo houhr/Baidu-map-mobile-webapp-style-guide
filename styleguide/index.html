@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Webapp Styleguide</title>
+    <meta name="description" content="" />
+    <meta name="generator" content="kss-node" />
+    <link rel="stylesheet" href="public/kss.css" />
+    <link rel="stylesheet" href="public/style.css" />
+    <link rel="stylesheet" href="../stylesheets/css/sg.css" />
+    <!--[if lt IE 9]>
+    <script src="public/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body id="kss-node">
+    <div class="kss-wrapper styleguide">
+      <div class="kss-sidebar">
+        <div class="kss-sidebar-inner">
+          <header class="kss-header">
+            <h1 class="kss-doc-title"><a href="./">Webapp Style Guide</a></h1>
+          </header>
+          <nav class="kss-nav">
+            <ul class="kss-menu" data-kss-ref="0">
+              <li class="kss-menu-item"><a href="./"><span class="kss-ref">0</span><span class="kss-name">首页</span></a></li>
+
+              <li class="kss-menu-item"><a href="section-1.html"><span class="kss-ref">1</span><span class="kss-name">基本样式</span></a></li>
+
+              <li class="kss-menu-item"><a href="section-2.html"><span class="kss-ref">2</span><span class="kss-name">栅格系统</span></a></li>
+
+              <li class="kss-menu-item"><a href="section-3.html"><span class="kss-ref">3</span><span class="kss-name">按钮</span></a></li>
+
+              <li class="kss-menu-item"><a href="section-4.html"><span class="kss-ref">4</span><span class="kss-name">表单</span></a></li>
+
+              <li class="kss-menu-item"><a href="section-5.html"><span class="kss-ref">5</span><span class="kss-name">缩略图</span></a></li>
+
+              <li class="kss-menu-item"><a href="section-6.html"><span class="kss-ref">6</span><span class="kss-name">Tab</span></a></li>
+
+              <li class="kss-menu-item"><a href="section-7.html"><span class="kss-ref">7</span><span class="kss-name">卡片</span></a></li>
+
+              <li class="kss-menu-item"><a href="section-8.html"><span class="kss-ref">8</span><span class="kss-name">列表</span></a></li>
+
+              <li class="kss-menu-item"><a href="section-9.html"><span class="kss-ref">9</span><span class="kss-name">表格</span></a></li>
+
+              <li class="kss-menu-item"><a href="section-10.html"><span class="kss-ref">10</span><span class="kss-name">弹出框</span></a></li>
+
+              <li class="kss-menu-item"><a href="section-11.html"><span class="kss-ref">11</span><span class="kss-name">示例</span></a></li>
+
+              <li class="kss-menu-item"><a href="icons/mwa-preview.html"><span class="kss-ref">#</span><span class="kss-name">图标</span></a></li>
+            </ul>
+
+
+          </nav>
+        </div>
+      </div>
+      <div class="kss-content">
+        <article class="kss-article">
+
+          <section id="section-0" class="kss-section kss-overview">
+            <h1>欢迎</h1>
+<h2>1. Style Guide 使用说明</h2>
+<p>根据前期对于现有版本的Webapp中界面元素的梳理，我们总结归纳出了按钮、表单、缩略图等多种样式组件。
+
+</p>
+<p>调用某个组件的步骤如下：
+
+</p>
+<ol>
+<li><p>声明该组件的class名称。例如，要在<code>&lt;button&gt;</code>元素上调用按钮组件时，需要先声明<code>class=&quot;btn&quot;</code>。这里需要强调的是，所有组件均只能通过 class 调用，没有通过 id 调用的组件。</p>
+</li>
+<li><p>根据需要指定隶属于该组件的<strong>局部参数</strong>。例如，如果需要一个小的、百度蓝色的、宽度为父元素20%的按钮，则只需在class中添加<code>-small</code>、<code>-brand</code>以及<code>-col2</code>参数即可。此时按钮的HTML为：<code>&lt;button class=&quot;btn -small -brand -col2&quot;&gt;</code>。</p>
+</li>
+<li><p>除了组件的参数外，我们还提供了有关背景颜色、背景透明度、阴影、字体大小以及字体颜色的<strong>全局参数</strong>。所有全局参数在实现时都带有<code>!important</code>关键字，因此大家可以利用它们来覆盖掉前面的组件默认样式和局部参数样式。例如，如果需要在上面小的、百度蓝色的、宽度为父元素20%的按钮的基础上，使用最大字号的文字，可以这样调用：<code>&lt;button class=&quot;btn -small -brand -col2 -ft-large&quot;&gt;</code>。</p>
+</li>
+</ol>
+<h2>2. Style Guide 更新方法</h2>
+<ol>
+<li><p>下载 Style Guide 代码。</p>
+<p> <code>$ svn checkout</code></p>
+</li>
+<li><p>安装相关依赖包。切换到 Style Guide 根目录下，运行下面命令：</p>
+<p> <code>$ sudo npm install</code></p>
+</li>
+<li><p>修改代码并重新编译（有时可能需要编译两遍才能生效）。</p>
+<p> <code>$ gulp</code></p>
+</li>
+</ol>
+<p>PS：目前 fonts icon 的自动化过程尚需进一步优化，所以这一部分的更新工作暂不开放，若需更新请联系<a href="mailto:houhongru@baidu.com?subject=Style Guide字体图标修改请求">鸿儒</a>或<a href="mailto:">李林</a>。<br>
+PPS：请忽略所有示例代码中的 <code>{$modifiers}</code>，该变量仅用于生成 Style Guide 时使用，谢谢！
+
+</p>
+<h2>3. Changelog</h2>
+<p>2014.3.6更新：
+
+</p>
+<ul>
+<li>新增apps、gotop、label三个图标字体；</li>
+<li>删除了带有左箭头和右箭头的弹出框；</li>
+<li>删除了<code>-normal</code>、<code>-dark</code>、<code>-darker</code>颜色的按钮；</li>
+<li>删除了<code>-darker</code>、<code>-brand</code>、<code>-alert</code>颜色的Card和Container;</li>
+<li>为适应GMU<code>suggestion</code>组件，修改了<code>input-text</code>和<code>input-group</code>的实现</li>
+<li>将<code>tab-secondary</code>拆分出一个文件</li>
+<li><p>对部分组件进行了小的调整</p>
+</li>
+<li><p>3.11 更新：</p>
+</li>
+<li><p>新增将styleguide拆分为<code>base-styles</code>和<code>append-styles</code>两个CSS文件</p>
+</li>
+<li>新增<code>list</code> <code>tab-secondary</code> <code>thumbnail</code>单独生成的CSS文件</li>
+</ul>
+
+          </section>
+
+        </article>
+        <footer class="kss-footer">
+          <div>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a> and <a href="https://github.com/htanjo/kss-node-template">kss-node-template</a>.</div>
+        </footer>
+      </div>
+    </div>
+    <script src="public/kss.js"></script>
+    <script src="public/jquery-1.9.1.min.js"></script>
+    <!--[if gt IE 8]><!-->
+    <script src="public/rainbow.min.js"></script>
+    <!--<![endif]-->
+    <script src="public/main.js"></script>
+  </body>
+</html>
